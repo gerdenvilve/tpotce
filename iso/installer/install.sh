@@ -522,6 +522,9 @@ if [ "$myTPOT_DEPLOYMENT_TYPE" == "iso" ] || [ "$myTPOT_DEPLOYMENT_TYPE" == "use
     "INDUSTRIAL" "Conpot, RDPY, Vnclowpot, ELK, NSM & Tools" \
     "COLLECTOR" "Heralding, ELK, NSM & Tools" \
     "NEXTGEN" "NextGen (Glutton, HoneyPy)" \
+    ### INICIO CODIGO ANADIDO
+     "LIGERO" "" \
+     ### FIN CODIGO ANADIDO
     "MEDICAL" "Dicompot, Medpot, ELK, NSM & Tools" 3>&1 1>&2 2>&3 3>&-)
 fi
 
@@ -756,6 +759,13 @@ case $myCONF_TPOT_FLAVOR in
     fuBANNER "MEDICAL"
     ln -s /opt/tpot/etc/compose/medical.yml $myTPOTCOMPOSE
   ;;
+  # INICIO CODIGO ANADIDO
+    LIGERO)
+    fuBANNER "LIGERO"
+    ln -s /opt/tpot/etc/compose/ligero.yml $myTPOTCOMPOSE
+  ;;
+    # FIN CODIGO ANADIDO
+
 esac
 
 # Let's load docker images
