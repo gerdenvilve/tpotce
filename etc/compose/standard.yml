@@ -632,3 +632,11 @@ services:
     image: "dtagdevsec/spiderfoot:2006"
     volumes:
      - /data/spiderfoot/spiderfoot.db:/home/spiderfoot/spiderfoot.db
+     
+# SERVICIO FILEBEAT:
+        image: "docker.elastic.co/beats/filebeat:7.2.0"
+        user: root
+        volumes:
+            - /MY_WORKDIR/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+            - /var/lib/docker:/var/lib/docker:ro
+            - /var/run/docker.sock:/var/run/docker.sock
