@@ -170,6 +170,6 @@ services:
     image: "dtagdevsec/spiderfoot:2006"
     
     # FILEBEAT SERVICIO 
- # filebeat:
-   # build: filebeat/.
-   #image: "dtagdevsec/filebeat :2006"
+  filebeat:
+    build: filebeat/.
+   image: "dtagdevsec/filebeat :2006"
